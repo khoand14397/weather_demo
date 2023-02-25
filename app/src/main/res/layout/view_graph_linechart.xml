@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll"
+    android:overScrollMode="never"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="horizontal">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvWeather"
+            android:layout_width="@dimen/px1200"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/px16"
+            android:importantForAccessibility="no"
+            android:orientation="horizontal"
+            android:overScrollMode="never"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/item_weather" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/graphChart"
+            android:layout_width="@dimen/px1200"
+            android:layout_height="@dimen/px76"
+            android:layout_marginHorizontal="@dimen/px16"
+            android:layout_marginTop="-10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvWeather" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</HorizontalScrollView>
